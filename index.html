@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.typekit.net/zse5lyy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <title>Get This Done! || To-Do List</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="add-task-wrapper">
+          <h1 class="add-task-title">
+            Get<br>This<br>Done!
+          </h1>
+          <form id="add-task-form">
+            <div class="form-control">
+              <label class="form-label" for="task">Get this done...</label>
+              <div class="form-input-wrapper">
+                <input type="text" name="task" class="form-input" id="task" value="">
+              </div>
+            </div>
+            <input type="submit" value="Add Task!" class="btn">        
+          </form>        
+        </div>
+        <div class="task-list-wrapper">
+          <h3 id="task-title">Tasks</h3>        
+          <form>
+            <div class="form-control">
+              <label class="form-label" for="task">Filter tasks...</label>
+              <div class="form-input-wrapper">
+                <input type="text" name="filter" class="form-input" id="filter" value="">
+              </div>
+            </div>  
+          </form>    
+          <ul class="task-list js-task-list">
+          </ul>
+          <a href="#" class="clear-tasks js-clear-tasks btn">Clear All Tasks!</a>
+        </div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+  </body>
+</html>

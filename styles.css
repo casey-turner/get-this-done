@@ -1,0 +1,196 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?9ap8w0");
+  src: url("fonts/icomoon.eot?9ap8w0#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?9ap8w0") format("truetype"), url("fonts/icomoon.woff?9ap8w0") format("woff"), url("fonts/icomoon.svg?9ap8w0#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close-outline:before {
+  content: "\e902";
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 1200px;
+  max-width: 768px;
+  border: 1px solid #9bb5b5;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-task-wrapper {
+  padding: 40px;
+}
+
+.task-list-wrapper {
+  display: none;
+  padding: 40px;
+  border-top: 1px solid #9bb5b5;
+}
+
+.task-list-wrapper.active {
+  display: block;
+}
+
+.task-list-wrapper > h4 {
+  margin-top: 0;
+}
+
+h1, h3 {
+  color: #000032;
+  font-family: termina, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  margin-top: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #000032;
+  border: 2px solid #000032;
+  color: #d0dcdc;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 24px;
+  font-family: termina, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: .05rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #000032;
+}
+
+.form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form-label {
+  color: rgba(0, 0, 50, 0.6);
+  padding: 0 8px;
+  line-height: 1;
+  font-size: .9rem;
+  position: absolute;
+  -webkit-transform: translate(0, 24px) scale(1);
+          transform: translate(0, 24px) scale(1);
+  -webkit-transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.form-label.focused, .form-label.filling {
+  color: #000032;
+  -webkit-transform: translate(0, 1.5px) scale(0.8);
+          transform: translate(0, 1.5px) scale(0.8);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.form-input-wrapper {
+  width: 100%;
+  position: relative;
+  margin-top: 16px;
+}
+
+.form-input-wrapper::before, .form-input-wrapper::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+}
+
+.form-input-wrapper::before {
+  -webkit-transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid #000032;
+}
+
+.form-input-wrapper::after {
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms, -webkit-transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  border-bottom: 2px solid #F45B69;
+}
+
+.form-input-wrapper.focused::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.form-input {
+  outline: none;
+  font: inherit;
+  width: 100%;
+  border: 0;
+  padding: 6px 8px 7px;
+  background: none;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.task-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 30px;
+}
+
+.task-list-item {
+  padding: 12px 36px 12px 12px;
+  background-color: #9bb5b5;
+  margin-bottom: 1px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.task-list-item .delete-item {
+  text-decoration: none;
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  color: #f0f8ff;
+}
+/*# sourceMappingURL=styles.css.map */

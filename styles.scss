@@ -1,0 +1,195 @@
+////////////////////////////////////////////////////////////////////////////////////
+// Variables
+////////////////////////////////////////////////////////////////////////////////////
+$dark-blue: #000032;
+$gainsboro: #d0dcdc;
+$aliceblue: #f0f8ff;
+$opal: #9bb5b5;
+$silver: #f2f2f2;
+$lemon: #F45B69;
+
+////////////////////////////////////////////////////////////////////////////////////
+// Icon Font
+////////////////////////////////////////////////////////////////////////////////////
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?nl8owr');
+  src:  url('fonts/icomoon.eot?nl8owr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?nl8owr') format('truetype'),
+    url('fonts/icomoon.woff?nl8owr') format('woff'),
+    url('fonts/icomoon.svg?nl8owr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-close-outline:before {
+  content: "\e902";
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// General
+////////////////////////////////////////////////////////////////////////////////////
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $silver;
+  font-family: 'Montserrat', sans-serif;
+}
+.container {
+  width: 1200px;
+  max-width: 768px;
+  border: 1px solid $opal;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-task-wrapper {
+  padding: 40px;
+}
+.task-list-wrapper {
+  display: none;
+  padding: 40px;
+  border-top: 1px solid $opal;
+  &.active {
+    display: block;
+  }
+  > h4 {
+    margin-top: 0;
+  }
+}
+
+h1, h3 { 
+  color: $dark-blue;
+  font-family: termina, sans-serif; 
+  font-weight: 800;
+  font-style: normal;
+  margin-top: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $dark-blue;
+  border: 2px solid $dark-blue;
+  color: $gainsboro;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 8px 24px;
+  font-family: termina, sans-serif; 
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: .05rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: $dark-blue;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// Form
+////////////////////////////////////////////////////////////////////////////////////  
+.form {
+  &-control {
+    display: flex;
+    position: relative;
+    margin-bottom: 15px;
+  }
+  &-label {
+    color: rgba( $dark-blue, .6 );
+    padding: 0 8px;
+    line-height: 1;
+    font-size: .9rem;
+    position: absolute;
+    transform: translate(0, 24px) scale(1);
+    transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+    &.focused,
+    &.filling {
+      color: $dark-blue;
+      transform: translate(0, 1.5px) scale(.8);
+      transform-origin: top left;
+    } 
+  }
+  &-input-wrapper {
+    width: 100%;
+    position: relative;
+    margin-top: 16px;
+    &::before,
+    &::after  {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+    }
+    &::before{
+      transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      border-bottom: 2px solid $dark-blue;
+    }
+    &::after {
+      transform: scaleX(0);
+      transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      border-bottom: 2px solid $lemon;
+    }
+    &.focused::after {
+      transform: scaleX(1);
+    }
+
+  }
+  &-input{
+    outline: none;
+    font: inherit;
+    width: 100%;
+    border: 0;
+    padding: 6px 8px 7px;
+    background: none;
+    transition: all .2s linear;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// Task List 
+////////////////////////////////////////////////////////////////////////////////////
+.task-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 30px;
+  &-item {
+    padding: 12px 36px 12px 12px;
+    background-color: $opal;
+    margin-bottom: 1px;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    position: relative;
+    .delete-item {
+      text-decoration: none;
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      color: $aliceblue;
+    }
+  }
+}
