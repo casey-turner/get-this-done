@@ -4,7 +4,6 @@
 const taskForm = document.getElementById('add-task-form');
 const taskInput = document.getElementById('task');
 const filterInput = document.getElementById('filter');
-const formInputs = document.querySelectorAll('.form-input');
 const taskListWrapper = document.querySelector('.task-list-wrapper');
 const taskList = document.querySelector('.js-task-list');
 const deleteItemLink = document.querySelector('.js-clear-tasks');
@@ -106,9 +105,6 @@ function removeInputClass(e) {
     this.parentNode.previousElementSibling.classList.remove("filling"); // label el.
   }
 } 
-
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////
 // FUNCTION - Create Task List Item HTML
